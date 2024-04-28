@@ -1,0 +1,87 @@
+---
+title: "hackathon"
+author: "Preethika Balakumar"
+date: "2024-04-28"
+output: pdf_document
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+exercise <- read.csv("~/Downloads/exercise_dataset.csv")
+
+age <- exercise$Age
+
+youngAdults <- vector("list", length = length(age))
+adults <- vector("list", length = length(age))
+olderAdults <- vector("list", length = length(age))
+elders <- vector("list", length = length(age))
+
+for(i in 1:length(age)){
+  if(age[i] < 26){
+    youngAdults[[i]] <- i
+  }
+  else if(25 < age[i] & age[i] < 45){
+    adults[[i]] <- i
+  }
+  else if(44 < age[i] & age[i] < 60){
+    olderAdults[[i]] <- i
+  }
+  else{
+    elders[[i]] <- i
+  }
+}
+
+youngAdults <- unlist(youngAdults)
+adults <- unlist(adults)
+olderAdults <- unlist(olderAdults)
+elders <- unlist(elders)
+
+exercise$Age_Group <- NA
+exercise$Age_Group[youngAdults] <- "Young Adults"
+exercise$Age_Group[adults] <- "Adults"
+exercise$Age_Group[olderAdults] <- "Older Adults"
+exercise$Age_Group[elders] <- "Elders"
+
+print("Null Hypothesis: The mean BMI is the same across all age gorups")
+print("Alternate Hypothesis: The mean BMI for at least one age group is different.")
+model <- aov(BMI ~ Age_Group, data = exercise)
+summary(model)
+```
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+
+# Read data
+exercise <- read.csv("~/Downloads/exercise_dataset.csv")
+
+# Create age groups
+exercise <- exercise %>%
+  mutate(Age_Group = case_when(
+    Age < 26 ~ "Young Adults",
+    between(Age, 26, 44) ~ "Adults",
+    between(Age, 45, 59) ~ "Older Adults",
+    TRUE ~ "Elders"
+  ))
+
+# Perform ANOVA
+model <- aov(BMI ~ Age_Group, data = exercise)
+print("Null Hypothesis: The mean BMI is the same across all age groups")
+print("Alternate Hypothesis: The mean BMI for at least one age group is different.")
+summary(model)
+
+# Visualize distribution of BMI across age groups
+ggplot(exercise, aes(x = Age_Group, y = BMI, fill = Age_Group)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(title = "Distribution of BMI Across Age Groups")
+
+##Conclusion
+print("Based on the p-value of 0.526 we fail to reject the null hypothesis and can not conlude that there is a difference in mean BMI accross age gorups.")
+
+
+
+```
+
