@@ -1,0 +1,224 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #F5FEFD;
+  font-family: "Poppins", sans-serif;
+}
+
+.container1 {
+  width:80%;
+  margin: 0 auto;
+}
+header{
+  background-color: #266DD3;
+}
+
+header::after{
+  content: '' ;
+  display: table;
+  clear: both;
+}
+
+.logo{
+  float: left;
+  padding: 10px, 0;
+}
+
+nav{
+  float: right;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li{
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 20px;
+
+  position: relative;
+}
+
+nav > ul > li > a{
+  color: #444;
+  text-decoration: none;
+
+}
+
+nav > ul > li > a:hover{
+  color: #000; 
+
+}
+
+nav > ul > li > a::before{
+  content: "";
+  display: block;
+  height: 5px;
+
+  background-color: #444;
+
+  position: absolute;
+  top:0;
+  width: 0%;
+
+  transition: ease-in-out 150ms;
+}
+
+nav > ul > li > a:hover::before{
+  width: 100%;
+}
+
+.top1_container{
+  background-image: url("assets/bluebkgd.jpeg");
+  background-size: cover; /* This property ensures that the background image covers the entire viewport */
+  background-position: center; /* This property centers the background image */
+  height: 100vh; /* This ensures that the background covers the entire viewport height */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.largewelc{
+  font-size: 50px;
+  
+}
+
+.mid1_container {
+  background-color: #f0f0f0; /* Background color for the container */
+  padding: 20px; /* Padding to create space between container and content */
+  text-align: center; /* Center align text */
+  width: 800px; 
+  height: 200px; 
+
+  /* border: 2px solid #333; */
+  margin: 40px auto;
+  border-radius: 10px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.mid1_container_text_title h1 {
+  font-size: 24px; /* Adjust the font size as needed */
+  margin-bottom: 10px; /* Add space between title and content */
+}
+
+.mid1_container_text_info p {
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+.mid2_container {
+  background-color: #f0f0f0; /* Background color for the container */
+  padding: 20px; /* Padding to create space between container and content */
+  text-align: center; /* Center align text */
+  width: 800px; 
+  height: 400px; 
+
+  /* border: 2px solid #333; */
+  margin: 40px auto;
+  border-radius: 10px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.mid2_container_text_title h1 {
+  font-size: 24px; /* Adjust the font size as needed */
+  margin-bottom: 10px; /* Add space between title and content */
+}
+
+.mid2_container_text_info p {
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+.bottom{
+  height:150px;
+}
+
+.bottom2{
+  height:50px;
+}
+
+/* .img-left,
+.img-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.img-left {
+  left: 0;
+}
+
+.img-right {
+  right: 0;
+} */
+
+/* page2 */
+
+
+/* Main content styles */
+.category-container2 {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.category2 {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.category2 h2 {
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+/* page3 */
+
+
+.container3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+
+/* Main content styles */
+.content3 {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#main-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Main styles */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#intro-text {
+  margin-bottom: 20px;
+}
